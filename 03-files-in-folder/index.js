@@ -17,7 +17,7 @@ class FileInFoleder {
         const extname = path.extname(file.name);
         fs.stat( pathToFile, (err, stats) => {
           if (err) return err;
-          console.log(`${file.name} - ${extname} - ${this.formatBytes(stats.size)}`);
+          console.log(`${path.basename(pathToFile, extname)} - ${extname} - ${this.formatBytes(stats.size)}`);
         });
       });
     });
